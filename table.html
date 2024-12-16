@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамічна таблиця</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about_worker.html">Про операторів</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+                 <li><a href="portfolio.html">Портфоліо</a></li>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="technique.html">Техніка</a></li>
+                <li><a href="table.html">Динамічна таблиця</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>Динамічна таблиця</h1>
+         <button id="updateButton">Оновити дані</button>
+        <button id="sortByName">Сортувати за ім'ям</button>
+        <button id="sortByAffiliation">Сортувати за фракцією</button>
+         <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Affiliation</th>
+                    <th>Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <!-- Дані будуть вставлені сюди за допомогою JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>© 2024 Землерух. Всі права захищені.</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="table.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Землерух - Послуги екскаватора</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="img/logo.png" alt="Логотип ЗемлеРух" class="logo">
+                <h1 class="slogan">Ваш надійний партнер для будівельних робіт</h1>
+            </div>
+            <img src="img/excavator-operator.jpg" alt="Оператор екскаватора за роботою" width="890" height="auto" class="hero-image">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about_worker.html">Про операторів</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li><a href="portfolio.html">Портфоліо</a></li>
+            <li><a href="services.html">Послуги</a></li>
+            <li><a href="technique.html">Техніка</a></li>
+            <li><a href="table.html">Динамічна таблиця</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about">
+            <div class="container">
+                <h2>Про компанію</h2>
+                <p>Наша компанія "Землерух" спеціалізується на наданні послуг екскаватора для різних будівельних робіт. Ми маємо багаторічний досвід та професійних операторів, які забезпечують високу якість виконання робіт.</p>
+                <p>Переваги співпраці з нами:</p>
+                <ul>
+                    <li>Висока якість послуг</li>
+                    <li>Своєчасне виконання замовлень</li>
+                    <li>Конкурентні ціни</li>
+                    <li>Індивідуальний підхід до кожного клієнта</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2>Наші послуги</h2>
+                <p>Ось деякі з послуг, які ми надаємо:</p>
+                <ol>
+                    <li id="trench">Копання траншей</li>
+                    <li id="cleaning">Прибирання території</li>
+                    <li id="loading">Навантаження сипучих матеріалів</li>
+                    <li id="planning">Планування території</li>
+                </ol>
+
+                <table border="1">
+                    <tr>
+                        <th>Послуга</th>
+                        <th>Ціна (грн)/год</th>
+                        <th>Опис</th>
+                    </tr>
+                    <tr>
+                        <td>Траншеї</td>
+                        <td>900</td>
+                        <td>Копання траншей</td>
+                    </tr>
+                    <tr>
+                        <td>Прибирання</td>
+                        <td>850</td>
+                        <td>Прибирання території</td>
+                    </tr>
+                    <tr>
+                        <td>Навантаження</td>
+                        <td>890</td>
+                        <td>Навантаження сипучих матеріалів</td>
+                    </tr>
+                    <tr>
+                        <td>Планування</td>
+                        <td>840</td>
+                        <td>Вирівнювання площі</td>
+                    </tr>
+                </table>
+                <button id="toggleTable">Показати/Сховати ціни</button>
+            </div>
+        </section>
+
+        <section class="video">
+            <div class="container">
+                <h2>Наші відео</h2>
+                <iframe width="420" height="255" src="https://www.youtube-nocookie.com/embed/ZjGIAe8zUj8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <iframe width="420" height="255" src="https://www.youtube-nocookie.com/embed/9IC6yVI4dBk" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section class="survey">
+            <div class="container">
+                <h2>Опитування</h2>
+                <form id="surveyForm">
+                    <label for="name">Ім'я:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+        
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+        
+                    <label for="question1">Питання 1: Яка ваша улюблена послуга?</label><br>
+                    <select id="question1" name="question1" required>
+                        <option value="trench">Копання траншей</option>
+                        <option value="cleaning">Прибирання території</option>
+                        <option value="loading">Навантаження сипучих матеріалів</option>
+                        <option value="planning">Планування території</option>
+                    </select><br><br>
+        
+                    <label for="question2">Питання 2: Чи задоволені ви якістю наших послуг?</label><br>
+                    <input type="radio" id="q2-yes" name="question2" value="yes" required>
+                    <label for="q2-yes">Так</label><br>
+                    <input type="radio" id="q2-no" name="question2" value="no">
+                    <label for="q2-no">Ні</label><br><br>
+        
+                    <label for="question3">Питання 3: Ваші побажання та коментарі:</label><br>
+                    <textarea id="question3" name="question3" rows="4"></textarea><br><br>
+        
+                    <input type="submit" value="Надіслати">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Землерух. Всі права захищені.<br>
+                3КН-24б Стецюра Олександр
+            </p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

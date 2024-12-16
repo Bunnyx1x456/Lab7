@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жарти</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #joke-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        #joke-text {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="joke-container">
+        <p id="joke-text">Натисніть кнопку щоб отримати жарт!</p>
+        <button id="get-joke-btn">Показати жарт</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#get-joke-btn").click(function() {
+                 $("#joke-text").text("Завантаження жарту...");
+                $.ajax({
+                    url: 'jokes.txt',
+                    dataType: 'text',
+                    success: function(data) {
+                        console.log("Отримані дані:", data);
+                        if (data) {
+                            let jokes = data.split('\n').filter(line => line.trim() !== '');
+                            console.log("Масив жартів:", jokes);
+                            if (jokes.length > 0) {
+                                let randomIndex = Math.floor(Math.random() * jokes.length);
+                                let randomJoke = jokes[randomIndex];
+                                $("#joke-text").text(randomJoke);
+                            } else {
+                                $("#joke-text").text("Файл жартів пустий або не містить жартів.");
+                            }
+                        } else {
+                            $("#joke-text").text("Не вдалося отримати дані з файлу.");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Помилка AJAX:", status, error);
+                        $("#joke-text").text("Помилка завантаження жартів. Перевірте консоль.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
